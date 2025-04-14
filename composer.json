@@ -6,8 +6,6 @@
     "type": "project",
     "require": {
         "php": "^7.4",
-        "uofa/laravel-dusk": "1.*",
-        "uofa/laravel-framework": "5.4.*",
         "phpunit/phpunit": "~9.1"
     },
     "replace": {
