@@ -1,0 +1,67 @@
+{
+    "name": "laravel/laravel",
+    "description": "The Laravel Framework.",
+    "keywords": ["framework", "laravel"],
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "php": "^7.4",
+        "uofa/laravel-dusk": "1.*",
+        "uofa/laravel-framework": "5.4.*",
+        "phpunit/phpunit": "~9.1"
+    },
+    "replace": {
+        "doctrine/inflector": "*",
+        "doctrine/instantiator": "*",
+        "erusev/parsedown": "*",
+        "league/flysystem": "*",
+        "mtdowling/cron-expression": "*",
+        "myclabs/deep-copy": "*",
+        "paragonie/random_compat": "*",
+        "phpspec/prophecy": "*",
+        "ramsey/uuid": "*",
+        "swiftmailer/swiftmailer": "*",
+        "tijsverkoyen/css-to-inline-styles": "*",
+        "webmozart/assert": "*"
+    },
+    "autoload": {
+        "classmap": [
+        ],
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+        ],
+        "post-install-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postInstall"
+        ],
+        "post-update-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate"
+        ],
+        "test": [
+            "Composer\\Config::disableProcessTimeout",
+            "php artisan dusk --without-tty --group mobileApp"
+        ]
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true,
+        "platform": {
+            "php": "7.4.0"
+        },
+        "allow-plugins": {
+            "kylekatarnls/update-helper": true
+        }
+    }
+}
